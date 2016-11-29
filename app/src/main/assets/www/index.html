@@ -25,6 +25,26 @@
         </li>
     </script>
 
+    <script type="text/html" id="page-formulaire">
+        <form id="formulaire-prenom">
+
+            <label class="formulaire" for="joueur-prenom">
+                Bonjour ! Quel est ton prénom ?
+            </label>
+            <input type="text" id="joueur-prenom"/>
+
+            <input class="formulaire" type="submit" value="Valider"/>
+        </form>
+    </script>
+
+    <script type="text/html" id="page-statistiques">
+        <h1 class="titreStatistiques">Statistiques de {NOM}</h1>
+        <p id="jeu-taille">Taille : {TAILLE}</p>
+        <p id="jeu-forme">Forme : {FORME}</p>
+        <p id="jeu-nombre">Nombre : {NOMBRE}</p>
+        <a href="#page-formulaire">Retour à l'accueil</a>
+    </script>
+
     </body>
 
     <script type="text/javascript" charset="utf-8" src="modele/Joueur.js"></script>
