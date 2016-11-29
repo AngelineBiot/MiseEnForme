@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title> Mise En Formes </title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+        <!--<script type="text/javascript" charset="utf-8" src="lib/cordova.js"></script>-->
+        <script type="text/javascript" charset="utf-8" src="lib/jquery.js"></script>
+
+    </head>
+
+    <body>
+        Ça ne fonctionne pas.
+
+    <script type="text/html" id="pageListeParties">
+        <h1 class="titreApplication"> Mise en formes (pour le dessin) ! </h1>
+        <ul class="listeParties" id="listeParties"></ul>
+        <p class="lienDebuterPartie"><a href="#"> Débuter une partie </a></p>
+    </script>
+
+    <script type="text/html" id="itemListeParties">
+        <li class="itemPartie">
+            {NOM}
+        </li>
+    </script>
+
+    </body>
+
+    <script type="text/javascript" charset="utf-8" src="modele/Joueur.js"></script>
+    <script type="text/javascript" charset="utf-8" src="donnees/JoueurDAO.js"></script>
+    <script type="text/javascript" charset="utf-8" src="vues/ListeJoueursVue.js"></script>
+    <script type="text/javascript" charset="utf-8" src="action/application.js"></script>
+
+</html>
