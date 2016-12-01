@@ -15,8 +15,6 @@ var DessinVue = function()
 
         window.location.hash = "#pageResultat";
         event.preventDefault();
-
-        alert("J'ai fini !");
     }
 }
 DessinVue.html = $("#pageDessin").html();
