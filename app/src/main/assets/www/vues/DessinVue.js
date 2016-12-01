@@ -1,10 +1,10 @@
 var DessinVue = function()
 {
-    this.afficher = function()
+    this.afficher = function(joueur)
     {
         $("body").html(DessinVue.html);
 
-        var htmlEnConstruction = DessinVue.html.replace("{NOM_JOUEUR}", this.joueur.nomJOUEUR)
+        var htmlEnConstruction = DessinVue.html.replace("{NOM_JOUEUR}", joueur.nomJOUEUR);
 
         $("#formulaireDessin").on("submit", $.proxy(this.allerAuResultat, this));
     }

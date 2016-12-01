@@ -21,7 +21,7 @@ var applicationMiseEnForme =
         this.joueurDAO = new JoueurDAO();
         this.naviguer();
     },
-//$.proxy(this.afficherToutesLesParties, this
+    //$.proxy(this.afficherToutesLesParties, this
     naviguer:function()
     {
         var ancre = window.location.hash;
@@ -40,7 +40,7 @@ var applicationMiseEnForme =
         else if(ancre.match(/^#pageDessin/))
         {
             this.dessinVue = new DessinVue();
-            this.dessinVue.afficher();
+            this.dessinVue.afficher(this.joueurDAO.trouverJoueurParId(1));
         }
         else if(ancre.match(/^#pageResultat/))
         {
