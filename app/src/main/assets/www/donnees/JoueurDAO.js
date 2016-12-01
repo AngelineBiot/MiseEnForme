@@ -55,7 +55,7 @@ var JoueurDAO = function()
     {
         for(var index in this.listeJoueur)
         {
-            if(this.listeJoueur[index].id == idJOUEUR)
+            if(this.listeJoueur[index].idJOUEUR == idJOUEUR)
             {
                 return this.listeJoueur[index];
             }
