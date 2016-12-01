@@ -51,11 +51,33 @@ var JoueurDAO = function()
         return self.listeJoueur;
     };
 
+    this.modifierJoueur = function(joueur)
+    {
+        for(var index in this.listeJoueur)
+        {
+            if(this.listeJoueur[index].idJOUEUR == idJOUEUR)
+            {
+                listeJoueur[index].nomJOUEUR = joueur.nomJOUEUR;
+            }
+        }
+    };
+
+    this.supprimerJoueur = function(joueur)
+    {
+        for(var index in this.listeJoueur)
+            {
+                if(this.listeJoueur[index].idJOUEUR == idJOUEUR)
+                {
+                    listeJoueur.splice(index, 1);
+                }
+            }
+    };
+
     this.trouverJoueurParId = function(idJOUEUR)
     {
         for(var index in this.listeJoueur)
         {
-            if(this.listeJoueur[index].id == idJOUEUR)
+            if(this.listeJoueur[index].idJOUEUR == idJOUEUR)
             {
                 return this.listeJoueur[index];
             }
@@ -63,14 +85,14 @@ var JoueurDAO = function()
     };
 
     this.reagirErreur = function(erreur)
-        {
-            console.log("ERREUR SQL : " + erreur.code + ":" + erreur.message);
-            //alert("ERREUR SQL : " + erreur.code + ":" + erreur.message);
-        }
+    {
+        console.log("ERREUR SQL : " + erreur.code + ":" + erreur.message);
+        //alert("ERREUR SQL : " + erreur.code + ":" + erreur.message);
+    }
 
-        this.reagirSucces = function()
-        {
-            console.log("SUCCES SQL");
-            //alert("SUCCES SQL");
-        }
+    this.reagirSucces = function()
+    {
+        console.log("SUCCES SQL");
+        //alert("SUCCES SQL");
+    }
 }
