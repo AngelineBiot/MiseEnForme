@@ -16,7 +16,7 @@
     <script type="text/html" id="pageListeParties">
         <h1 class="titreApplication"> Mise en formes (pour le dessin) ! </h1>
         <ul class="listeParties" id="listeParties"></ul>
-        <p class="lienDebuterPartie"><a href="#"> Débuter une partie </a></p>
+        <p class="lienDebuterPartie"><a href="#pageFormulaire"> Débuter une partie </a></p>
     </script>
 
     <script type="text/html" id="itemListeParties">
@@ -25,24 +25,31 @@
         </li>
     </script>
 
-    <script type="text/html" id="page-formulaire">
-        <form id="formulaire-prenom">
+    <script type="text/html" id="pageFormulaire">
+        <form id="formulaireNom">
 
-            <label class="formulaire" for="joueur-prenom">
+            <label class="formulaire" for="joueurNom">
                 Bonjour ! Quel est ton prénom ?
             </label>
-            <input type="text" id="joueur-prenom"/>
+            <input type="text" id="joueurNom"/>
 
             <input class="formulaire" type="submit" value="Valider"/>
         </form>
     </script>
 
-    <script type="text/html" id="page-statistiques">
-        <h1 class="titreStatistiques">Statistiques de {NOM}</h1>
-        <p id="jeu-taille">Taille : {TAILLE}</p>
-        <p id="jeu-forme">Forme : {FORME}</p>
-        <p id="jeu-nombre">Nombre : {NOMBRE}</p>
-        <a href="#page-formulaire">Retour à l'accueil</a>
+    <script type="text/html" id="pageResultat">
+        <h1 class="titreResultat">Résultats de {NOM_JOUEUR}</h1>
+        <p id="dessinNbForme">Nombre de formes : {NOMBRE_FORME}</p>
+        <p id="dessinNom">Nom du dessin : {NOM_DESSIN}</p>
+        <a href="#">Retour à l'accueil</a>
+    </script>
+
+    <script type="text/html" id="pageDessin">
+        <h1 class="nomJoueur">{NOM_JOUEUR}</h1>
+        <form id="formulaireDessin">
+            <input type="submit" value="J'ai fini !"/>
+            <a href="#pageResultat">J'ai fini !</a>
+        </form>
     </script>
 
     </body>
@@ -50,6 +57,9 @@
     <script type="text/javascript" charset="utf-8" src="modele/Joueur.js"></script>
     <script type="text/javascript" charset="utf-8" src="donnees/JoueurDAO.js"></script>
     <script type="text/javascript" charset="utf-8" src="vues/ListeJoueursVue.js"></script>
+    <script type="text/javascript" charset="utf-8" src="vues/FormulaireVue.js"></script>
+    <script type="text/javascript" charset="utf-8" src="vues/DessinVue.js"></script>
+    <script type="text/javascript" charset="utf-8" src="vues/ResultatVue.js"></script>
     <script type="text/javascript" charset="utf-8" src="action/application.js"></script>
 
 </html>

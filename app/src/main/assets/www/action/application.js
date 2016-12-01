@@ -32,6 +32,21 @@ var applicationMiseEnForme =
             this.listeJoueursVue = new ListeJoueursVue(this.joueurDAO.listerTousLesJoueurs());
             this.listeJoueursVue.afficher();
         }
+        else if (ancre.match(/^#pageFormulaire/))
+        {
+            this.formulaireVue = new FormulaireVue();
+            this.formulaireVue.afficher();
+        }
+        else if(ancre.match(/^#pageDessin/))
+        {
+            this.dessinVue = new DessinVue();
+            this.dessinVue.afficher();
+        }
+        else if(ancre.match(/^#pageResultat/))
+        {
+            this.resultatVue = new ResultatVue();
+            this.resultatVue.afficher();
+        }
     },
 
     afficherToutesLesParties:function(listeJoueurs)
