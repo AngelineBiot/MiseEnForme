@@ -10,7 +10,8 @@ var ListeJoueursVue = function(listeParties)
         for(var cptParties in listeParties)
         {
             htmlEnConstruction += ListeJoueursVue.htmlItem
-            .replace("{NOM}", listeParties[cptParties].nom)
+            .replace("{ID_JOUEUR}", listeParties[cptParties].idJOUEUR)
+            .replace("{NOM_JOUEUR}", listeParties[cptParties].nomJOUEUR)
         }
         htmlListeParties.html(htmlEnConstruction);
     }

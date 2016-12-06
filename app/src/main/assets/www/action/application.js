@@ -28,31 +28,46 @@ var applicationMiseEnForme =
 
         if(!ancre)
         {
-            //this.listeJoueursVue = this.joueurDAO.listerTousLesJoueurs();
-            this.listeJoueursVue = new ListeJoueursVue(this.joueurDAO.listerTousLesJoueurs());
-            this.listeJoueursVue.afficher();
+            this.listeJoueursVue = this.joueurDAO.listerTousLesJoueurs($.proxy(this.afficherToutesLesParties, this));
+            /*this.listeJoueursVue = new ListeJoueursVue(this.joueurDAO.listerTousLesJoueurs());
+            this.listeJoueursVue.afficher();*/
         }
         else if (ancre.match(/^#pageFormulaire/))
         {
             this.formulaireVue = new FormulaireVue();
-            this.formulaireVue.afficher();
+            this.formulaireVue.afficher($.proxy(this.sauvegarderNouveauJoueur, this));
         }
         else if(ancre.match(/^#pageDessin/))
         {
-            this.dessinVue = new DessinVue();
-            this.dessinVue.afficher(this.joueurDAO.trouverJoueurParId(1));
+            var trouvailles = ancre.match(/^#pageDessin\/([0-9]+)/);
+            var idJoueur = trouvailles[1];
+
+            var joueur = this.joueurDAO.trouverJoueurParId(idJoueur);
+
+            this.dessinVue = new DessinVue(joueur);
+            this.dessinVue.afficher();
         }
         else if(ancre.match(/^#pageResultat/))
         {
-            this.resultatVue = new ResultatVue();
+            var trouvailles = ancre.match(/^#pageResultat\/([0-9]+)/);
+            var idJoueur = trouvailles[1];
+
+            var joueur = this.joueurDAO.trouverJoueurParId(idJoueur);
+
+            this.resultatVue = new ResultatVue(joueur);
             this.resultatVue.afficher();
         }
     },
 
     afficherToutesLesParties:function(listeJoueurs)
     {
-        //this.listeJoueursVue = new ListeJoueursVue(listeJoueurs);
-        //this.listeJoueursVue.afficher();
+        this.listeJoueursVue = new ListeJoueursVue(listeJoueurs);
+        this.listeJoueursVue.afficher();
+    },
+
+    sauvegarderNouveauJoueur:function(joueur)
+    {
+        this.joueurDAO.ajouterJoueur(joueur);
     }
 };
 

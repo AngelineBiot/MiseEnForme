@@ -1,9 +1,9 @@
-var Joueur = function(id, nom)
+var Joueur = function(idJOUEUR, nomJOUEUR)
 {
     this.construire = function()
     {
-        this.id = id;
-        this.nom = nom;
+        this.idJOUEUR = idJOUEUR;
+        this.nomJOUEUR = nomJOUEUR;
     }
 
     this.construire();

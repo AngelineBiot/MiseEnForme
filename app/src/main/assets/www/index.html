@@ -21,7 +21,9 @@
 
     <script type="text/html" id="itemListeParties">
         <li class="itemPartie">
-            {NOM}
+            <a href="#pageDessin/{ID_JOUEUR}">
+                {NOM_JOUEUR}
+            </a>
         </li>
     </script>
 
@@ -29,13 +31,14 @@
         <h1 class="titreSecondaire">Bonjour !</h1>
         <form id="formulaireNom">
 
-            <label class="formulaire" for="joueurNom">
+            <label class="formulaire" for="nomJoueur">
                 Quel est ton prénom ?
             </label>
-            <input type="text" id="joueurNom"/>
+            <input type="text" id="nomJoueur"/>
 
             <input class="formulaire" type="submit" value="Valider"/>
         </form>
+        <a class="retour" href="#"> Retour à la liste </a>
     </script>
 
     <script type="text/html" id="pageResultat">
@@ -48,7 +51,7 @@
     <script type="text/html" id="pageDessin">
         <h1 class="nomJoueur">{NOM_JOUEUR}</h1>
         <form id="formulaireDessin">
-            <input type="submit" value="J'ai fini !"/>
+            <a href="#pageResultat/{ID_JOUEUR}"> J'ai fini </a>
         </form>
     </script>
 

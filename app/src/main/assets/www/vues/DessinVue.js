@@ -1,20 +1,23 @@
-var DessinVue = function()
+var DessinVue = function(joueur)
 {
-    this.afficher = function(joueur)
+    this.afficher = function()
     {
-        $("body").html(DessinVue.html);
+        var htmlEnConstruction = DessinVue.html
+            .replace("{NOM_JOUEUR}", joueur.nomJOUEUR)
+            .replace("{ID_JOUEUR}", joueur.idJOUEUR);
 
-        var htmlEnConstruction = DessinVue.html.replace("{NOM_JOUEUR}", joueur.nomJOUEUR);
+        $("body").html(htmlEnConstruction);
 
         $("#formulaireDessin").on("submit", $.proxy(this.allerAuResultat, this));
     }
 
-    this.allerAuResultat = function()
+    /*this.allerAuResultat = function()
     {
-        var nom = $("#formulaireDessin").val();
+        var nomJoueur = $("#formulaireDessin").val();
 
-        window.location.hash = "#pageResultat";
+        window.location.hash = "#pageResultat/{ID_JOUEUR}";
         event.preventDefault();
-    }
+    }*/
 }
+
 DessinVue.html = $("#pageDessin").html();
