@@ -12,7 +12,7 @@ var JoueurDAO = function()
             function(operation)
             {
                 var SQL_SELECT_CREATE_JOUEUR = "CREATE TABLE IF NOT EXISTS Joueur(idJOUEUR INTEGER PRIMARY KEY AUTOINCREMENT, nomJOUEUR VARCHAR(50))";
-                //var SQL_SELECT_CREATE_DESSIN = "CREATE TABLE IF NOT EXISTS Dessin(idDESSIN INTEGER PRIMARY KEY AUTOINCREMENT, idJOUEUR VARCHAR(50), nomDESSIN VARCHAR(50), nbFormesDESSIN INTEGER, cheminDESSIN VARCHAR(MAX))";
+                //var SQL_SELECT_CREATE_DESSIN = "CREATE TABLE IF NOT EXISTS Dessin(idDESSIN INTEGER PRIMARY KEY AUTOINCREMENT, idJOUEUR INTEGER, nomDESSIN VARCHAR(50), nbFormesDESSIN INTEGER, cheminDESSIN VARCHAR(MAX))";
 
                 operation.executeSql(SQL_SELECT_CREATE_JOUEUR);
                 //operation.executeSql(SQL_SELECT_CREATE_DESSIN);
@@ -23,6 +23,9 @@ var JoueurDAO = function()
 
     }
 
+    /****************************/
+    /*          JOUEUR          */
+    /****************************/
     this.ajouterJoueur = function(joueur)
     {
         this.baseDeDonnees.transaction
@@ -104,6 +107,11 @@ var JoueurDAO = function()
             }
         }
     };
+
+    /****************************/
+    /*          DESSIN          */
+    /****************************/
+
 
     this.reagirErreur = function(erreur)
     {
