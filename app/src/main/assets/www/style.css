@@ -1,13 +1,14 @@
 html
 {
-    font-style: bold;
     text-align: center;
+    background-color: black;
+    color: yellow;
 }
 
 body
 {
     font-family: Arial;
-    margin: 0;
+    margin: auto;
 }
 
 a
@@ -16,6 +17,7 @@ a
     font-size: 40px;
      display: block;
      margin: 10% 0%;
+     color: purple;
 }
 
 titreApplication
@@ -26,13 +28,20 @@ titreApplication
 
 input
 {
-    width: 50%;
+    width: 30%;
     margin: auto;
+    display: block;
+    margin-bottom: 5%;
+}
+
+#valider
+{
+    margin-left: 50%;
 }
 
 textarea
 {
-    width: 60%;
+    width: 30%;
     margin: auto;
 }
 
@@ -57,4 +66,5 @@ titreSecondaire
 .formulaire
 {
     margin: 5% 0%;
+    display: block;
 }

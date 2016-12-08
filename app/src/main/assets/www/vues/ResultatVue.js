@@ -1,4 +1,4 @@
-var ResultatVue = function(joueur)
+var ResultatVue = function(joueur, dessin)
 {
     this.afficher = function()
     {
@@ -6,9 +6,9 @@ var ResultatVue = function(joueur)
 
         var htmlEnConstruction = ResultatVue.html
             .replace("{NOM_JOUEUR}", joueur.nomJOUEUR)
-            .replace("ID_JOUEUR", joueur.idJOUEUR);
-            /*.replace("{NOMBRE_FORME}", this.dessin.nbFormeDESSIN)
-            .replace("{NOM_DESSIN", this.dessin.nomDESSIN);*/
+            .replace("{ID_JOUEUR}", joueur.idJOUEUR)
+            .replace("{NOMBRE_FORMES}", dessin.nbFormesDESSIN)
+            .replace("{CHEMIN_DESSIN}", dessin.cheminDESSIN);
         $("body").html(htmlEnConstruction);
     }
 }

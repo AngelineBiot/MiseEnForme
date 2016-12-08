@@ -53,16 +53,9 @@
             </label>
             <input type="text" id="nomJoueur"/>
 
-            <input class="formulaire" type="submit" value="Valider"/>
+            <input class="valider" type="submit" value="Valider"/>
         </form>
         <a class="retour" href="#"> Retour à la liste </a>
-    </script>
-
-    <script type="text/html" id="pageResultat">
-        <h1 class="titreResultat">Résultats de {NOM_JOUEUR}</h1>
-        <p id="dessinNbForme">Nombre de formes : {NOMBRE_FORME}</p>
-        <p id="dessinNom">Nom du dessin : {NOM_DESSIN}</p>
-        <a href="#">Retour à l'accueil</a>
     </script>
 
     <script type="text/html" id="pageDessin">
@@ -72,9 +65,17 @@
         </form>
     </script>
 
+    <script type="text/html" id="pageResultat">
+        <h1 class="titreResultat">Résultats de {NOM_JOUEUR}</h1>
+        <p id="dessinNbForme">Nombre de formes : {NOMBRE_FORMES}</p>
+        <p id="dessinChemin">Lien du dessin : {CHEMIN_DESSIN}</p>
+        <a href="#">Retour à l'accueil</a>
+    </script>
+
     </body>
 
     <script type="text/javascript" charset="utf-8" src="modele/Joueur.js"></script>
+    <script type="text/javascript" charset="utf-8" src="modele/Dessin.js"></script>
     <script type="text/javascript" charset="utf-8" src="donnees/JoueurDAO.js"></script>
 
     <script type="text/javascript" charset="utf-8" src="vues/ListeJoueursVue.js"></script>

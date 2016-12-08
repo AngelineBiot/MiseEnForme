@@ -63,8 +63,9 @@ var applicationMiseEnForme =
             var idJoueur = trouvailles[1];
 
             var joueur = this.joueurDAO.trouverJoueurParId(idJoueur);
+            var dessin = this.dessinDAO.trouverDessinParIdJoueur(idJoueur);
 
-            this.resultatVue = new ResultatVue(joueur);
+            this.resultatVue = new ResultatVue(joueur, dessin);
             this.resultatVue.afficher();
         }
     },
