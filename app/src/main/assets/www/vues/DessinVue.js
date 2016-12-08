@@ -8,16 +8,17 @@ var DessinVue = function(joueur)
 
         $("body").html(htmlEnConstruction);
 
-        //$("#formulaireDessin").on("submit", $.proxy(this.allerAuResultat, this));
+        $("#boutonDessin").on("click", $.proxy(this.allerAuResultat, this));
     }
 
-    /*this.allerAuResultat = function()
+    this.allerAuResultat = function()
     {
-        var nomJoueur = $("#formulaireDessin").val();
 
-        window.location.hash = "#pageResultat/{ID_JOUEUR}";
+        alert("CLICK");
+
+        window.location.hash = "#pageResultat/"+joueur.idJOUEUR;
         event.preventDefault();
-    }*/
+    }
 }
 
 DessinVue.html = $("#pageDessin").html();

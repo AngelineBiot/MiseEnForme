@@ -8,10 +8,12 @@ var timer;
 var couleurs = ["HotPink", "Yellow", "DeepSkyBlue", "Red", "Lime", "Purple", "Orange", "White", "Gray"];
 var couleurPrecedente;
 var sacFormes;
-var canvas = document.getElementById("jeu");
+var canvas = $("#jeu");
 
-function init() 
-{   
+function init()
+{
+    alert("Initialisation");
+    alert(canvas);
     //Faire en sorte que le canvas prenne la taille de l'écran
     var largeur = window.innerWidth;
     var hauteur = window.innerHeight;

@@ -46,6 +46,7 @@ var applicationMiseEnForme =
 
             this.dessinVue = new DessinVue(joueur);
             this.dessinVue.afficher();
+            init();
         }
         else if(ancre.match(/^#pageModifier/))
         {
