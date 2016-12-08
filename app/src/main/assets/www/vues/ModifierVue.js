@@ -5,7 +5,7 @@ var ModifierVue = function(joueur)
         var htmlEnConstruction = ModifierVue.html
             .replace("{NOM_JOUEUR}", joueur.nomJOUEUR)
             .replace("{ID_JOUEUR}", joueur.idJOUEUR);
-            /*.replace("{NOMBRE_FORME}", this.dessin.nbFormeDESSIN)
+            /*.replace("{NOMBRE_FORME}", this.dessin.nbFormesDESSIN)
             .replace("{NOM_DESSIN", this.dessin.nomDESSIN);*/
 
         $("body").html(htmlEnConstruction);

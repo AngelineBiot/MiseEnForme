@@ -1,8 +1,7 @@
 var JoueurDAO = function()
 {
     this.listeJoueur = [];
-
-    //this.listeDessin = [];
+    this.listeDessin = [];
 
     this.initialiser = function()
     {
@@ -12,10 +11,10 @@ var JoueurDAO = function()
             function(operation)
             {
                 var SQL_SELECT_CREATE_JOUEUR = "CREATE TABLE IF NOT EXISTS Joueur(idJOUEUR INTEGER PRIMARY KEY AUTOINCREMENT, nomJOUEUR VARCHAR(50))";
-                //var SQL_SELECT_CREATE_DESSIN = "CREATE TABLE IF NOT EXISTS Dessin(idDESSIN INTEGER PRIMARY KEY AUTOINCREMENT, idJOUEUR INTEGER, nomDESSIN VARCHAR(50), nbFormesDESSIN INTEGER, cheminDESSIN VARCHAR(MAX))";
+                var SQL_SELECT_CREATE_DESSIN = "CREATE TABLE IF NOT EXISTS Dessin(idDESSIN INTEGER PRIMARY KEY AUTOINCREMENT, idJOUEUR INTEGER, nbFormesDESSIN INTEGER, cheminDESSIN VARCHAR(100))";
 
                 operation.executeSql(SQL_SELECT_CREATE_JOUEUR);
-                //operation.executeSql(SQL_SELECT_CREATE_DESSIN);
+                operation.executeSql(SQL_SELECT_CREATE_DESSIN);
             },
             this.reagirErreur,
             this.reagirSucces
@@ -120,6 +119,31 @@ var JoueurDAO = function()
     /*          DESSIN          */
     /****************************/
 
+    this.trouverDessinParId = function(idDESSIN)
+    {
+        for(var index in this.listeDessin)
+        {
+            if(this.listeDessin[index].idDESSIN == idDESSIN)
+            {
+                return this.listeDessin[index];
+            }
+        }
+    };
+
+    this.trouverDessinParIdJoueur = function(idJOUEUR)
+    {
+        for(var index in this.listeDessin)
+        {
+            if(this.listeDessin[index].idJOUEUR == idJOUEUR)
+            {
+                return this.listeDessin[index];
+            }
+        }
+    };
+
+    /****************************/
+    /*          COMMUN          */
+    /****************************/
 
     this.reagirErreur = function(erreur)
     {
