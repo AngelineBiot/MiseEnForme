@@ -8,7 +8,7 @@ var DessinVue = function(joueur)
 
         $("body").html(htmlEnConstruction);
 
-        $("#formulaireDessin").on("submit", $.proxy(this.allerAuResultat, this));
+        //$("#formulaireDessin").on("submit", $.proxy(this.allerAuResultat, this));
     }
 
     /*this.allerAuResultat = function()

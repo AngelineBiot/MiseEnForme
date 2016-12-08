@@ -47,6 +47,16 @@ var applicationMiseEnForme =
             this.dessinVue = new DessinVue(joueur);
             this.dessinVue.afficher();
         }
+        else if(ancre.match(/^#pageModifier/))
+        {
+            var trouvailles = ancre.match(/^#pageModifier\/([0-9]+)/);
+            var idJoueur = trouvailles[1];
+
+            var joueur = this.joueurDAO.trouverJoueurParId(idJoueur);
+
+            this.modifierVue = new ModifierVue(joueur);
+            this.modifierVue.afficher($.proxy(this.sauvegarderJoueur, this));
+        }
         else if(ancre.match(/^#pageResultat/))
         {
             var trouvailles = ancre.match(/^#pageResultat\/([0-9]+)/);
@@ -68,6 +78,11 @@ var applicationMiseEnForme =
     sauvegarderNouveauJoueur:function(joueur)
     {
         this.joueurDAO.ajouterJoueur(joueur);
+    },
+
+    sauvegarderJoueur:function(joueur)
+    {
+        this.joueurDAO.modifierJoueur(joueur);
     }
 };
 

@@ -77,24 +77,32 @@ var JoueurDAO = function()
 
     this.modifierJoueur = function(joueur)
     {
-        for(var index in this.listeJoueur)
-        {
-            if(this.listeJoueur[index].idJOUEUR == idJOUEUR)
-            {
-                listeJoueur[index].nomJOUEUR = joueur.nomJOUEUR;
-            }
-        }
+        this.baseDeDonnees.transaction
+            (
+                function(operation)
+                 {
+                    var SQL_MODIFICATION = "UPDATE Joueur SET nomJOUEUR = ? WHERE idJOUEUR = ?";
+                    var parametres = [joueur.nomJOUEUR, joueur.idJOUEUR];
+                    operation.executeSql(SQL_MODIFICATION, parametres);
+                 },
+                 this.reagirErreur,
+                 this.reagirSucces
+            );
     };
 
-    this.supprimerJoueur = function(joueur)
+    this.supprimerJoueur = function(idJOUEUR)
     {
-        for(var index in this.listeJoueur)
-            {
-                if(this.listeJoueur[index].idJOUEUR == idJOUEUR)
-                {
-                    listeJoueur.splice(index, 1);
-                }
-            }
+        this.baseDeDonnees.transaction
+        (
+            function(operation)
+             {
+                var SQL_SUPPRESSION = "DELETE FROM Joueur WHERE idJOUEUR = ?";
+                var parametres = [idJOUEUR];
+                operation.executeSql(SQL_SUPPRESSION, parametres);
+             },
+             this.reagirErreur,
+             this.reagirSucces
+        );
     };
 
     this.trouverJoueurParId = function(idJOUEUR)

@@ -12,6 +12,7 @@ var ListeJoueursVue = function(listeParties)
             htmlEnConstruction += ListeJoueursVue.htmlItem
             .replace("{ID_JOUEUR}", listeParties[cptParties].idJOUEUR)
             .replace("{NOM_JOUEUR}", listeParties[cptParties].nomJOUEUR)
+            .replace("{ID_JOUEUR}", listeParties[cptParties].idJOUEUR)
         }
         htmlListeParties.html(htmlEnConstruction);
     }
