@@ -13,9 +13,7 @@ var DessinVue = function(joueur)
 
     this.allerAuResultat = function()
     {
-
-
-        window.location.hash = "#pageResultat/"+joueur.idJOUEUR;
+        window.location.hash = "#pageResultat/"+joueur.idJOUEUR+"/"+nbFormes;
         event.preventDefault();
     }
 }

@@ -7,8 +7,7 @@ var ResultatVue = function(joueur, dessin)
         var htmlEnConstruction = ResultatVue.html
             .replace("{NOM_JOUEUR}", joueur.nomJOUEUR)
             .replace("{ID_JOUEUR}", joueur.idJOUEUR)
-            /*.replace("{NOMBRE_FORMES}", dessin.nbFormesDESSIN)
-            .replace("{CHEMIN_DESSIN}", dessin.cheminDESSIN);*/
+            .replace("{NOMBRE_FORMES}", dessin.nbFormesDESSIN);
         $("body").html(htmlEnConstruction);
     }
 }

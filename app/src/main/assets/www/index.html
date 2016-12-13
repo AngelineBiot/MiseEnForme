@@ -5,7 +5,7 @@
 
         <link rel="stylesheet" type="text/css" href="style.css">
 
-        <!--<script type="text/javascript" charset="utf-8" src="lib/cordova.js"></script>-->
+        <script type="text/javascript" charset="utf-8" src="lib/cordova.js"></script>
         <script type="text/javascript" charset="utf-8" src="lib/jquery.js"></script>
         <script src="https://code.createjs.com/easeljs-0.8.2.min.js"></script>
     </head>
@@ -37,7 +37,7 @@
                 </label>
                 <input type="text" id="nomJoueur" value="{NOM_JOUEUR}"/>
 
-                <input type="text" id="idJoueur" value="{ID_JOUEUR}"/>
+                <input type="hidden" id="idJoueur" hidden="hidden" value="{ID_JOUEUR}"/>
 
                 <input class="formulaire" type="submit" value="Valider"/>
             </form>
@@ -61,14 +61,13 @@
         <script type="text/html" id="pageDessin">
             <canvas id="jeu" width="500" height="500"></canvas>
             <br><br>
-            <button style="width:50%;margin-left:25%;margin-right:25%;position:absolute;bottom:15px;" id="boutonDessin">Terminé!</button>
+            <button style="position:absolute;bottom:15px;" id="boutonDessin">Terminé!</button>
             <!-- <a href="#pageResultat/{ID_JOUEUR}"> J'ai fini </a> -->
         </script>
 
         <script type="text/html" id="pageResultat">
             <h1 class="titreResultat">Résultats de {NOM_JOUEUR}</h1>
             <p id="dessinNbFormes">Nombre de formes : {NOMBRE_FORMES}</p>
-            <p id="dessinChemin">Lien du dessin : {CHEMIN_DESSIN}</p>
             <a href="#">Retour à l'accueil</a>
         </script>
 

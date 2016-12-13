@@ -12,13 +12,10 @@ var canvas = $("#jeu");
 
 function init()
 {
-    alert("Initialisation");
     nbFormes = 0;
     couleurs = ["HotPink", "Yellow", "DeepSkyBlue", "Red", "Lime", "Purple", "Orange", "White", "Gray"];
     canvas = $("#jeu");
-    alert(canvas);
     stage = new createjs.Stage("jeu");
-    alert(stage);
     //Faire en sorte que le canvas prenne la taille de l'écran
     var largeur = window.innerWidth;
     var hauteur = window.innerHeight;
@@ -32,8 +29,9 @@ function init()
     //leY = canvas.height/2;
     
     //Remplir le canvas avec une grosse forme noire pour faire le fond; bravo william
-    forme.graphics.beginFill("Black").drawRect(0, 0, largeur, hauteur);
-    forme.regX = forme.regY = 5;
+    forme.graphics.beginFill("Black").drawRect(0, 0, 1000, 1000);
+    forme.regX = forme.regY = 500;
+    forme.rotation = 0;
     stage.addChild(forme);
     stage.update();
 

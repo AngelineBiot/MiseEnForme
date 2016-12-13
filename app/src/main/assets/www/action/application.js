@@ -70,11 +70,12 @@ var applicationMiseEnForme =
         }
         else if(ancre.match(/^#pageResultat/))
         {
-            var trouvailles = ancre.match(/^#pageResultat\/([0-9]+)/);
+            var trouvailles = ancre.match(/^#pageResultat\/([0-9]+)\/([0-9]+)/);
             var idJoueur = trouvailles[1];
+            var nbFormes = trouvailles[2];
 
             var joueur = this.joueurDAO.trouverJoueurParId(idJoueur);
-            var dessin = this.joueurDAO.trouverDessinParIdJoueur(idJoueur);
+            var dessin = new Dessin(null, idJoueur, nbFormes, "");
 
             this.resultatVue = new ResultatVue(joueur, dessin);
             this.resultatVue.afficher();
