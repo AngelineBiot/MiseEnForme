@@ -13,7 +13,12 @@ var canvas = $("#jeu");
 function init()
 {
     alert("Initialisation");
+    nbFormes = 0;
+    couleurs = ["HotPink", "Yellow", "DeepSkyBlue", "Red", "Lime", "Purple", "Orange", "White", "Gray"];
+    canvas = $("#jeu");
     alert(canvas);
+    stage = new createjs.Stage("jeu");
+    alert(stage);
     //Faire en sorte que le canvas prenne la taille de l'écran
     var largeur = window.innerWidth;
     var hauteur = window.innerHeight;
@@ -22,15 +27,29 @@ function init()
     document.documentElement.style.overflow = 'hidden'; //empêche le 'scroll'
     leX = stage.canvas.width/2;
     leY = stage.canvas.height/2;
+
+    //leX = canvas.width/2;
+    //leY = canvas.height/2;
     
     //Remplir le canvas avec une grosse forme noire pour faire le fond; bravo william
     forme.graphics.beginFill("Black").drawRect(0, 0, largeur, hauteur);
     forme.regX = forme.regY = 5;
     stage.addChild(forme);
     stage.update();
+
+    /**
+    forme.clone(false);
+    forme = new createjs.Shape();
+
+    forme.graphics.beginFill("HotPink").drawPolyStar(5, 5, 10, 5, 0.6, -90);
+    forme.regX = forme.regY = 5;
+    stage.addChild(forme);
+    stage.update();
+    **/
     
     //Ajouter un texte temporaire qui indique: cliquer et maintenir pour créer
     //des formes, relacher pour arreter le grossissement, répéter.
+    /*
     var ctx = canvas.getContext("2d");
     ctx.font = "20px Comic Sans MS";
     ctx.fillStyle = "white";
@@ -40,22 +59,13 @@ function init()
     ctx.fillText("relacher pour arreter", leX, leY/1.5);
     ctx.fillText("le grossissement,", leX, leY/1.2);
     ctx.fillText("répéter.", leX, leY);
-    
+    */
+
     remplirSac();
 }
 
-$("#jeu").mousedown(function()
-{
-    nouvelleForme();
-    timer = setInterval(grossir, 75);
-}).mouseup(function()
-{
-    clearInterval(timer);
-});
-
 function grossir()
 {
-    $("#debug").append("");
     forme.scaleX *= 1.1;
     forme.scaleY *= 1.1;
     forme.rotation += vitesseAngle;

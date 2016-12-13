@@ -46,7 +46,17 @@ var applicationMiseEnForme =
 
             this.dessinVue = new DessinVue(joueur);
             this.dessinVue.afficher();
+
             init();
+
+            $("#jeu").mousedown(function()
+            {
+                nouvelleForme();
+                timer = setInterval(grossir, 75);
+            }).mouseup(function()
+            {
+                clearInterval(timer);
+            });
         }
         else if(ancre.match(/^#pageModifier/))
         {

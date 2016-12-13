@@ -13,64 +13,64 @@
     <body>
         Ça ne fonctionne pas.
 
-    <script type="text/html" id="pageListeParties">
-        <h1 class="titreApplication"> Mise en formes (pour le dessin) ! </h1>
-        <ul class="listeParties" id="listeParties"></ul>
-        <p class="lienDebuterPartie"><a href="#pageFormulaire"> Débuter une partie </a></p>
-    </script>
+        <script type="text/html" id="pageListeParties">
+            <h1 class="titreApplication"> Mise en formes (pour le dessin) ! </h1>
+            <ul class="listeParties" id="listeParties"></ul>
+            <p class="lienDebuterPartie"><a href="#pageFormulaire"> Débuter une partie </a></p>
+        </script>
 
-    <script type="text/html" id="itemListeParties">
-        <li class="itemPartie">
-            <a href="#pageDessin/{ID_JOUEUR}">
-                {NOM_JOUEUR}
-            </a>
-            <a href="#pageModifier/{ID_JOUEUR}"> Modifier </a>
-        </li>
-    </script>
+        <script type="text/html" id="itemListeParties">
+            <li class="itemPartie">
+                <a href="#pageDessin/{ID_JOUEUR}">
+                    {NOM_JOUEUR}
+                </a>
+                <a href="#pageModifier/{ID_JOUEUR}"> Modifier </a>
+            </li>
+        </script>
 
-    <script type="text/html" id="pageModifier">
-        <h1 class="titreSecondaire"> Bonjour !</h1>
-        <form id="formulaireModifier">
+        <script type="text/html" id="pageModifier">
+            <h1 class="titreSecondaire"> Bonjour !</h1>
+            <form id="formulaireModifier">
 
-            <label class="formulaire" for="nomJoueur">
-                Quel est ton nouveau prénom ?
-            </label>
-            <input type="text" id="nomJoueur" value="{NOM_JOUEUR}"/>
+                <label class="formulaire" for="nomJoueur">
+                    Quel est ton nouveau prénom ?
+                </label>
+                <input type="text" id="nomJoueur" value="{NOM_JOUEUR}"/>
 
-            <input type="text" id="idJoueur" value="{ID_JOUEUR}"/>
+                <input type="text" id="idJoueur" value="{ID_JOUEUR}"/>
 
-            <input class="formulaire" type="submit" value="Valider"/>
-        </form>
-        <a class="retour" href="#"> Retour à la liste </a>
-    </script>
+                <input class="formulaire" type="submit" value="Valider"/>
+            </form>
+            <a class="retour" href="#"> Retour à la liste </a>
+        </script>
 
-    <script type="text/html" id="pageFormulaire">
-        <h1 class="titreSecondaire">Bonjour !</h1>
-        <form id="formulaireNom">
+        <script type="text/html" id="pageFormulaire">
+            <h1 class="titreSecondaire">Bonjour !</h1>
+            <form id="formulaireNom">
 
-            <label class="formulaire" for="nomJoueur">
-                Quel est ton prénom ?
-            </label>
-            <input type="text" id="nomJoueur"/>
+                <label class="formulaire" for="nomJoueur">
+                    Quel est ton prénom ?
+                </label>
+                <input type="text" id="nomJoueur"/>
 
-            <input class="valider" type="submit" value="Valider"/>
-        </form>
-        <a class="retour" href="#"> Retour à la liste </a>
-    </script>
+                <input class="valider" type="submit" value="Valider"/>
+            </form>
+            <a class="retour" href="#"> Retour à la liste </a>
+        </script>
 
-    <script type="text/html" id="pageDessin">
-        <canvas id="jeu" style="background-color:black;" width="500" height="500"></canvas>
-        <br><br>
-        <button style="width:50%;margin-left:25%;margin-right:25%;position:absolute;bottom:15px;" id="boutonDessin">Terminé!</button>
-        <!-- <a href="#pageResultat/{ID_JOUEUR}"> J'ai fini </a> -->
-    </script>
+        <script type="text/html" id="pageDessin">
+            <canvas id="jeu" width="500" height="500"></canvas>
+            <br><br>
+            <button style="width:50%;margin-left:25%;margin-right:25%;position:absolute;bottom:15px;" id="boutonDessin">Terminé!</button>
+            <!-- <a href="#pageResultat/{ID_JOUEUR}"> J'ai fini </a> -->
+        </script>
 
-    <script type="text/html" id="pageResultat">
-        <h1 class="titreResultat">Résultats de {NOM_JOUEUR}</h1>
-        <p id="dessinNbFormes">Nombre de formes : {NOMBRE_FORMES}</p>
-        <p id="dessinChemin">Lien du dessin : {CHEMIN_DESSIN}</p>
-        <a href="#">Retour à l'accueil</a>
-    </script>
+        <script type="text/html" id="pageResultat">
+            <h1 class="titreResultat">Résultats de {NOM_JOUEUR}</h1>
+            <p id="dessinNbFormes">Nombre de formes : {NOMBRE_FORMES}</p>
+            <p id="dessinChemin">Lien du dessin : {CHEMIN_DESSIN}</p>
+            <a href="#">Retour à l'accueil</a>
+        </script>
 
     </body>
 
@@ -87,6 +87,4 @@
     <script type="text/javascript" charset="utf-8" src="vues/ModifierVue.js"></script>
 
     <script type="text/javascript" charset="utf-8" src="action/application.js"></script>
-
-
 </html>

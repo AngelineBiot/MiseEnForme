@@ -14,7 +14,6 @@ var DessinVue = function(joueur)
     this.allerAuResultat = function()
     {
 
-        alert("CLICK");
 
         window.location.hash = "#pageResultat/"+joueur.idJOUEUR;
         event.preventDefault();
